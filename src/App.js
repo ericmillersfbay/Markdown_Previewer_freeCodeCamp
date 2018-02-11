@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import marked from "react-marked"
+import marked from "marked"
 
 class App extends React.Component {
   constructor(props) {
@@ -9,11 +9,16 @@ class App extends React.Component {
       input: ''
     };
     this.handleChange = this.handleChange.bind(this);
+    this.getMarkdownText = this.getMarkdownText.bind(this);
   }
   handleChange(event) {
     this.setState({
       input: event.target.value
     });
+  }
+  getMarkdownText() {
+    var rawMarkup = marked(this.state.input);
+    return { __html: rawMarkup };
   }
   render() {
     var marked = require('marked');
@@ -23,15 +28,14 @@ class App extends React.Component {
       tables: true,
       breaks: false,
       pedantic: false,
-      sanitize: false,
+      sanitize: true,
       smartLists: true,
       smartypants: false
     });
     return (
       <div>
-          <textarea cols="50" rows="4" type="textarea" value={this.state.input} onChange={this.handleChange}>
-          </textarea>
-        <h1 id="size">{marked(this.state.input)}</h1>
+          <textarea cols="50" rows="4" type="textarea" value={this.state.input} onChange={this.handleChange}></textarea>
+        <div id="size" dangerouslySetInnerHTML={this.getMarkdownText()}/>
       </div>
     );
   }
