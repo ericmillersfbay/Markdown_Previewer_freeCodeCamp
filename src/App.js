@@ -21,7 +21,6 @@ class App extends React.Component {
     return { __html: rawMarkup };
   }
   render() {
-    var marked = require('marked');
     marked.setOptions({
       renderer: new marked.Renderer(),
       gfm: true,
