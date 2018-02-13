@@ -33,8 +33,17 @@ class App extends React.Component {
     });
     return (
       <div>
-          <textarea cols="50" rows="4" type="textarea" value={this.state.input} onChange={this.handleChange}></textarea>
-        <div id="size" dangerouslySetInnerHTML={this.getMarkdownText()}/>
+      <div class="bar">
+        <div class="title">
+          <h1>Markdown Previewer</h1>
+        </div>
+      </div>
+      <div id="markdownContainer">
+        <div id="rawMarkdown">
+          <textarea cols="200" rows="50" type="textarea" value={this.state.input} onChange={this.handleChange} placeholder="Test your Github flavored markdown here."></textarea>
+        </div>
+        <div id="markdownPreview" dangerouslySetInnerHTML={this.getMarkdownText()}/>
+      </div>
       </div>
     );
   }
