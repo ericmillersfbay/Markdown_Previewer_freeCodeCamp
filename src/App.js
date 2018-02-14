@@ -33,8 +33,8 @@ class App extends React.Component {
     });
     return (
       <div>
-      <div class="bar">
-        <div class="title">
+      <div className="bar">
+        <div className="title">
           <h1>Markdown Previewer</h1>
         </div>
       </div>
