@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ericmiller777.github.io/MArkdown_Previewer_freeCodeCamp",
   "dependencies": {
     "marked": "^0.3.12",
     "react": "^16.2.0",
@@ -11,9 +12,13 @@
     "react-scripts": "1.1.1"
   },
   "scripts": {
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
   }
 }
