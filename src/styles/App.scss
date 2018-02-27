@@ -1,0 +1,27 @@
+$halfWindowWidth: 50%;
+$halfWindowHeight: 50%;
+$headerBoarder: 1px solid rgb(32, 32, 32);
+
+
+#markdownContainer{
+display: flex;
+}
+
+#rawMarkdown{
+  width: $halfWindowWidth;
+  height: $halfWindowHeight;
+}
+
+#markdownPreview{
+  width: $halfWindowWidth;
+  height: $halfWindowHeight;
+}
+
+.bar{
+display: flex;
+border: $headerBoarder;
+}
+
+textarea {
+  max-width:95%;
+}
